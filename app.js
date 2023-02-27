@@ -1,7 +1,8 @@
 const app = Vue.createApp({
     data(){
         return{
-             name: 'Mynul'
+             name: 'Mynul',
+             link: 'https://vuejs.org/'
         };
     }
 });
