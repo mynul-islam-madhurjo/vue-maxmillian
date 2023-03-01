@@ -9,17 +9,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="https://unpkg.com/vue@next" defer></script> 
     <script src="app.js" defer></script>
   </head>
   <body>
     <header>
-      <h1>Vue App Creation</h1>
+      <h1>Vue </h1>
     </header>
     <section id="user-goal">
       <!-- Interpolation -->
       <h1>{{ name }}</h1>
-      <h1>{{ numberTest() }}</h1>
+      <!-- <h1 >{{ numberTest() }}</h1> -->
+      <p v-html="numberTest()"></p>
       <!-- Data Binding -->
       <p> <button><a v-bind:href="link">About</a></button></p>
     </section>

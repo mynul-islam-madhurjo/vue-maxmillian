@@ -2,7 +2,7 @@ const app = Vue.createApp({
     data(){
         return{
              test1: 'This is test 1',
-             test2: 'This is test 2',
+             test2: '<h3>This is test 2 inside h2 tag</h3>',
              name: 'test ',
              link: 'https://vuejs.org/'
         };
