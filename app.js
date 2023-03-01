@@ -1,7 +1,9 @@
 const app = Vue.createApp({
     data(){
         return{
-             name: 'test 1',
+             test1: 'This is test 1',
+             test2: 'This is test 2',
+             name: 'test ',
              link: 'https://vuejs.org/'
         };
     },
@@ -9,9 +11,10 @@ const app = Vue.createApp({
         numberTest(){
             const number = Math.random()
             if (number < 0.5){
-                return 'working';
+                // we are using this as it is a property of the object 
+                return this.test1;
             }else{
-                return 'not working';
+                return this.test2;
             }
         }
     }
