@@ -13,14 +13,14 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <header>
+    <header> 
       <h1>Vue </h1>
     </header>
 
-    <section id="event">
+    <section id="event" style="margin-left: 20px;">
       <h2>Event</h2>
-      <button v-on:click="counter++">+1</button>
-      <button v-on:click="counter=counter-1">-1</button>
+      <button v-on:click="add()">+1</button>
+      <button v-on:click="sub()">-1</button>
       <h2>{{ counter }}</h2>
     </section>
 
