@@ -17,11 +17,18 @@
     <section id="event" style="margin-left: 20px;">
       <h2>Event</h2>
       <button v-on:click="add(5)">+5</button>
-      <button v-on:click="sub(5)">-5</button>
+      <button v-on:click.right="sub(5)">-5</button>
       <h2>{{ counter }}</h2>
       <!-- Using global events, it will pass object which decribes the event vanilla js -->
-      <input type="text" v-on:input="setName">
+      <input type="text" v-on:input="setName" v-on:keyup.enter="confirmedName">
       <h2>You pressed {{ name }}</h2>
+      <h2>Confirmed {{ confirmedname }}</h2>
+
+
+      <form v-on:submit.prevent="submitForm" >
+        <input type="text" >
+        <button>Submit</button>
+      </form>
 
     </section>
 

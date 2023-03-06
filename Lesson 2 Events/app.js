@@ -2,10 +2,18 @@ const app = Vue.createApp({
     data(){
         return{
             counter: 0,
-            name: ''
+            name: '',
+            confirmedname: ''
         };
     },
     methods: {
+        confirmedName(){
+            this.confirmedname=this.name;
+        },
+        submitForm(event){
+            //prevetns the default reload of the form http request vanilla js
+            //event.preventDefault();
+        },
         setName(event){
             this.name = event.target.value;
             // passing whole string
