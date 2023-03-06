@@ -18,6 +18,8 @@
       <h2>Event</h2>
       <button v-on:click="add(5)">+5</button>
       <button v-on:click.right="sub(5)">-5</button>
+      <!-- Initial variable will be stored for reference before any changes occure -->
+      <h2 v-once>Initial Counter {{ counter }}</h2>
       <h2>{{ counter }}</h2>
       <!-- Using global events, it will pass object which decribes the event vanilla js -->
       <input type="text" v-on:input="setName" v-on:keyup.enter="confirmedName">
