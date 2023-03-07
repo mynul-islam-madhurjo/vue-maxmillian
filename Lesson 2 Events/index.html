@@ -22,13 +22,19 @@
       <h2 v-once>Initial Counter {{ counter }}</h2>
       <h2>{{ counter }}</h2>
       <!-- Using global events, it will pass object which decribes the event vanilla js -->
-      <input type="text" v-on:input="setName" v-on:keyup.enter="confirmedName">
+      <!-- Bind clears the input field as well with the variable -->
+
+      <input type="text" v-bind:value="name" v-on:input="setName" v-on :keyup.enter="confirmedName"> <br>
+
+      <!-- v-model does both -->
+      v-model <br>
+      <input type="text" v-model="name"> <br>
+
+      <button v-on:click="resetInput">Reset</button>
       <h2>You pressed {{ name }}</h2>
       <h2>Confirmed {{ confirmedname }}</h2>
-
-
       <form v-on:submit.prevent="submitForm" >
-        <input type="text" >
+        <input type="text" > <br>
         <button>Submit</button>
       </form>
 
