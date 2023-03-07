@@ -32,7 +32,9 @@
 
       <button v-on:click="resetInput">Reset</button>
     <!-- Returning dynamic vlaues with methods are not the best solution  -->
-      <h2>You pressed {{ outputFullName() }}</h2>
+      <!-- <h2>You pressed {{ outputFullName() }}</h2> -->
+      <!-- Computed is not called whenever a change happens -->
+      <h2>You pressed {{ fullName }}</h2>
       <h2>Confirmed {{ confirmedname }}</h2>
       <form v-on:submit.prevent="submitForm" >
         <input type="text" > <br>

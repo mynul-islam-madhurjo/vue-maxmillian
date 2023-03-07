@@ -6,6 +6,14 @@ const app = Vue.createApp({
             confirmedname: ''
         };
     },
+    computed:{
+        fullName(){
+            if (this.name===''){
+                return ''
+            }
+            return this.name+' '+'Islam'
+        }
+    },
     methods: {
         outputFullName(){
             if (this.name===''){
