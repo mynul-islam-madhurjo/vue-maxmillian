@@ -31,6 +31,7 @@
       <input type="text" v-model="name"> <br>
 
       <button v-on:click="resetInput">Reset</button>
+    <!-- Returning dynamic vlaues with methods are not the best solution  -->
       <h2>You pressed {{ outputFullName() }}</h2>
       <h2>Confirmed {{ confirmedname }}</h2>
       <form v-on:submit.prevent="submitForm" >
