@@ -16,7 +16,9 @@
 
     <section id="event" style="margin-left: 20px;">
       <h2>Event</h2>
-      <button v-on:click="add(5)">+5</button>
+
+      <!-- we can use @ instead of v-on: -->
+      <button @click="add(5)">+5</button>
       <button v-on:click.right="sub(5)">-5</button>
       <!-- Initial variable will be stored for reference before any changes occure -->
       <h2 v-once>Initial Counter {{ counter }}</h2>
@@ -24,6 +26,7 @@
       <!-- Using global events, it will pass object which decribes the event vanilla js -->
       <!-- Bind clears the input field as well with the variable -->
 
+      <!-- WE can use : instead of v-bind: -->
       <input type="text" v-bind:value="name" v-on:input="setName" v-on:keyup.enter="confirmedName"> <br>
 
       <!-- v-model does both -->
