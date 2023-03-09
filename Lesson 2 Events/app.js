@@ -6,6 +6,19 @@ const app = Vue.createApp({
             confirmedname: ''
         };
     },
+    // when we want to execute something when a particular variable chages we need watcher
+    // we dont need to return anything here we will use the watcher only for logic it is alternative to computed
+    // useful for small chanegs and http requests
+    watch:{
+        counter(value){
+            if (value>10){
+                const that = this;
+                setTimeout(function(){
+                    that.counter = 0;
+                }, 2000)
+            }
+        }
+    },
     computed:{
         fullName(){
             if (this.name===''){
