@@ -15,8 +15,12 @@
   <body>
 
     <section id="styling">
+      <!-- inline CSS -->
       <div class="demo" :style="{borderColor: boxASelected ? 'red' : '#ccc'}" @click="boxSelected('A')"></div>
-      <div class="demo" :style="" @click="boxSelected('B')"></div>
+
+      <!-- Dynamic CSS adding with vue -->
+      <div :class="boxBSelected ? 'demo active' : 'demo'"  @click="boxSelected('B')"></div>
+
       <div class="demo" :style="" @click="boxSelected('C')"></div>
     </section>
   </body>
