@@ -21,7 +21,8 @@
       <!-- Dynamic CSS adding with vue -->
       <div :class="boxBSelected ? 'demo active' : 'demo'"  @click="boxSelected('B')"></div>
 
-      <div class="demo" :style="" @click="boxSelected('C')"></div>
+      <!-- More readable Code -->
+      <div :class="{demo:true, active:boxCSelected}" :style="" @click="boxSelected('C')"></div>
     </section>
   </body>
 </html>
