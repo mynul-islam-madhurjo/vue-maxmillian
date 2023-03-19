@@ -22,7 +22,11 @@
       <div :class="boxBSelected ? 'demo active' : 'demo'"  @click="boxSelected('B')"></div>
 
       <!-- More readable Code -->
-      <div :class="{demo:true, active:boxCSelected}" :style="" @click="boxSelected('C')"></div>
+      <!-- <div :class="{demo:true, active:boxCSelected}" :style="" @click="boxSelected('C')"></div> -->
+      <!-- <div class="demo" :class="{active:boxCSelected}" :style="" @click="boxSelected('C')"></div> -->
+      <!-- With computed CSS -->
+      <div class="demo" :class="boxCclasses" :style="" @click="boxSelected('C')"></div>
+
     </section>
   </body>
 </html>
