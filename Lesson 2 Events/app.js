@@ -42,7 +42,7 @@ const app = Vue.createApp({
             //event.preventDefault();
         },
         setName(event){
-            this.name = event.target.value;
+            this.name = event.target.value; 
             // passing whole string
             console.log(event.target.value)
             //passing one by one string 
