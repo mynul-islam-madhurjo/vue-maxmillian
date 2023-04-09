@@ -15,12 +15,12 @@
   <body>
 
     <section id="user-goals">
-      <input type="text" />
-      <button>Add Goal</button>
+      <input type="text" v-model="enteredGoals" />
+      <button @click="addGoal">Add Goal</button>
       <p v-if="goals.length===0">No goals have been added yet - please start adding some!</p>
       <ul>
         <li>Goal</li>
       </ul>
-    </section>
+    </section> 
   </body>
 </html>
