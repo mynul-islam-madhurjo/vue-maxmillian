@@ -12,6 +12,7 @@
     methods: {
         attackMonster(){
             this.monsterHealth -= randomValue(10,5);
+            console.log(this.monsterHealth);
             this.attackPlayer();
         },
         attackPlayer(){
@@ -19,3 +20,5 @@
         }
     }
  });
+
+app.mount('#game');
