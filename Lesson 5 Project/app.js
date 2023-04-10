@@ -9,6 +9,14 @@
             playerHealth: 100
         };
     },
+    computed: {
+        monsterBarStyles(){
+            return {width: this.monsterHealth + '%'}
+        },
+        playerBarStyles(){
+            return {width: this.playerHealth + '%'}
+        }
+    },
     methods: {
         attackMonster(){
             this.monsterHealth -= randomValue(10,5);
