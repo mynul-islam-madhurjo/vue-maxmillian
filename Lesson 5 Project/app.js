@@ -6,7 +6,8 @@
     data() {
         return{
             monsterHealth: 100,
-            playerHealth: 100
+            playerHealth: 100,
+            currentRound: 0,
         };
     },
     computed: {
@@ -15,16 +16,24 @@
         },
         playerBarStyles(){
             return {width: this.playerHealth + '%'}
+        },
+        specialAttackMonsterHealth(){
+            return this.currentRound % 3 !== 0;
         }
     },
     methods: {
         attackMonster(){
+            this.currentRound++;
             this.monsterHealth -= randomValue(10,5);
             console.log(this.monsterHealth);
             this.attackPlayer();
         },
         attackPlayer(){
             this.playerHealth -= randomValue(15,5);
+        },
+        specialAttackMonster(){
+            this.monsterHealth -= randomValue(40,5);
+            this.attackPlayer();
         }
     }
  });
