@@ -8,6 +8,7 @@
             monsterHealth: 100,
             playerHealth: 100,
             currentRound: 0,
+            winner: null
         };
     },
     computed: {
@@ -21,6 +22,22 @@
             return this.currentRound % 3 !== 0;
         }
     },
+    watch:{
+        playerHealth(value){
+            if(value <= 0 && this.monsterHealth <= 0){
+                this.winner = 'draw';
+            }else if(value <= 0){
+                this.winner = 'monster';
+            }
+        },
+        monsterHealth(value){
+            if(value <= 0 && this.playerHealth <= 0){
+                this.winner = 'draw';
+            }else if(value <= 0){
+                this.winner = 'player';
+            }
+        }
+    },
     methods: {
         attackMonster(){
             this.currentRound++;
@@ -28,7 +45,7 @@
             this.attackPlayer();
         },
         attackPlayer(){
-            this.playerHealth -= randomValue(15,5);
+            this.playerHealth -= randomValue(20,5);
         },
         specialAttackMonster(){
             this.monsterHealth -= randomValue(40,5);
@@ -36,12 +53,12 @@
         },
         healPLayer(){
             this.currentRound++;
-            if(this.playerHealth+randomValue(20,5) > 100){
+            if(this.playerHealth+randomValue(25,5) > 100){
                 this.playerHealth = 100;
             }else{
-                this.playerHealth += randomValue(20,5);
+                this.playerHealth += randomValue(25,5);
             }
-            console.log(this.playerHealth);
+            this.attackPlayer();
         }
     }
  });
