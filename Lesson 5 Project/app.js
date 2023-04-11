@@ -25,7 +25,6 @@
         attackMonster(){
             this.currentRound++;
             this.monsterHealth -= randomValue(10,5);
-            console.log(this.monsterHealth);
             this.attackPlayer();
         },
         attackPlayer(){
@@ -34,8 +33,17 @@
         specialAttackMonster(){
             this.monsterHealth -= randomValue(40,5);
             this.attackPlayer();
+        },
+        healPLayer(){
+            this.currentRound++;
+            if(this.playerHealth+randomValue(20,5) > 100){
+                this.playerHealth = 100;
+            }else{
+                this.playerHealth += randomValue(20,5);
+            }
+            console.log(this.playerHealth);
         }
     }
  });
 
-app.mount('#game');
+app.mount('#game');   
