@@ -8,7 +8,8 @@
             monsterHealth: 100,
             playerHealth: 100,
             currentRound: 0,
-            winner: null
+            winner: null,
+            logMessages: []
         };
     },
     computed: {
@@ -42,10 +43,12 @@
         attackMonster(){
             this.currentRound++;
             this.monsterHealth -= randomValue(10,5);
+            this.addLogMessage('player', 'attackMonster');
             this.attackPlayer();
         },
         attackPlayer(){
             this.playerHealth -= randomValue(20,5);
+            this.addLogMessage('monster', 'attackPlayer');
         },
         specialAttackMonster(){
             this.monsterHealth -= randomValue(40,5);
@@ -59,6 +62,12 @@
                 this.playerHealth += randomValue(25,5);
             }
             this.attackPlayer();
+        },
+        addLogMessage(who,what){
+            this.logMessages.unshift({
+                actionBy: who,
+                actionType: what
+            });
         }
     }
  });
