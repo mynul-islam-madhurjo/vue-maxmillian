@@ -18,6 +18,12 @@ const app = Vue.createApp({
 
         }
     },
+    methods: {
+        toggleDetails(){
+            this.dataVisible = !this.dataVisible; 
+        }
+    }
+
 
 });
 
