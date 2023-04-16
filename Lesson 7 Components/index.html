@@ -17,15 +17,12 @@
       <h1>FriendList</h1>
     </header>
     <section id="app">
-      <ul v-for="friend in friends">
-        <li>
-          <h2>{{ friend.name }}</h2>
-          <button @click="toggleDetails">{{ dataVisible ? 'Hide' : 'Show'}} Details</button>
-          <ul v-if="dataVisible">
-            <li><strong>Phone:</strong> {{ friend.phone }}</li>
-            <li><strong>Email:</strong> {{ friend.email }}</li>
-          </ul>
-        </li>
+      <ul>
+        <!-- components are reusable pieces of HTML code with attached data and logic -->
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
+        <friend-contact></friend-contact>
       </ul>
     </section>
   </body>
