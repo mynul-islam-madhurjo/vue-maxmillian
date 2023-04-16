@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data(){
         return {
+            dataVisible: false,
             friends: [{
                 id: 'manuel',
                 name: 'Manuel Lorenz',
@@ -16,7 +17,8 @@ const app = Vue.createApp({
         ],
 
         }
-    }
+    },
+
 });
 
 app.mount('#app')
