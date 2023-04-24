@@ -17,7 +17,23 @@ import TheWelcome from './components/TheWelcome.vue'
   </main>
 </template>
 
-<style scoped>
+<script>
+
+// If you need to define variables or functions outside of the <script setup> section,
+// you can do so in a separate <script> block
+
+export default { 
+  name: 'App',
+  components: {
+    HelloWorld,
+    TheWelcome
+  }
+}
+
+</script>
+
+
+<style scoped> 
 header {
   line-height: 1.5;
 }
