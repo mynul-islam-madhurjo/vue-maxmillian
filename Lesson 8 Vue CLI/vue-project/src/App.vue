@@ -8,14 +8,19 @@ import FriendContact from './components/FriendContact.vue'
 </script>
 
 <template>
-  <section>
-    <h2> Friends List</h2>
+
+  <header>
+    <h1> Friends List</h1>
     <ul>
       <FriendContact/>
       <FriendContact/>
     </ul>
 
-  </section>
+  </header>
+    
+
+
+
 </template>  
 
 <script>
