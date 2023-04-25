@@ -1,32 +1,47 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import FriendContact from './components/FriendContact.vue'
+
+// Any variables or functions defined here will be available in the template
+
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <section>
+    <h2> Friends List</h2>
+    <ul>
+      <FriendContact/>
+      <FriendContact/>
+    </ul>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
-</template>
+  </section>
+</template>  
 
 <script>
-
 // If you need to define variables or functions outside of the <script setup> section,
 // you can do so in a separate <script> block
-
 export default { 
-  name: 'App',
-  components: {
-    HelloWorld,
-    TheWelcome
+  data(){
+    return {
+      friends: [
+        {
+          id: 'mynul',
+          name: 'mynul islam',
+          phone: '12345678',
+          email: 'mynulislam@gmail.com'
+        },
+        {
+          id: 'mynul2',
+          name: 'mynul islam 2',
+          phone: '12345678910',
+          email: 'mynulislam2@gmail.com'
+        }
+      ]
+    }
+  },
+  methods: {
+
   }
 }
 
