@@ -10,10 +10,19 @@ import FriendContact from './components/FriendContact.vue'
 <template>
 
   <header>
-    <h1> Friends List</h1>
+    <h1>Dynamic List</h1>
     <ul>
-      <FriendContact/>
-      <FriendContact/>
+      <!-- Need to use kebab case for html  -->
+      <FriendContact 
+      name="Mynul Islam"
+      phone-address="1234567890"
+      email-address="mynul@gmail.com"
+      />
+      <FriendContact
+      name="Mynul Islam 2"
+      phone-address="023892839283"
+      email-address="mynul2@gmail.com"
+      />
     </ul>
 
   </header>
@@ -35,7 +44,7 @@ export default {
           name: 'mynul islam',
           phone: '12345678',
           email: 'mynulislam@gmail.com'
-        },
+        }, 
         {
           id: 'mynul2',
           name: 'mynul islam 2',

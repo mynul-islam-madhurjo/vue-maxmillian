@@ -1,10 +1,10 @@
 <template>
     <li>
-        <h1> {{ friend.name }}</h1>
-        <button @click="showDetails"> Show More Details</button>
+        <h1> {{ name }}</h1>
+        <button @click="showDetails"> {{ dataVisible ? 'Hide' : 'Show' }} More Details</button>
             <ul v-if="dataVisible">
-                <li>{{ friend.phone }}</li>
-                <li> {{ friend.email }}</li>
+                <li>{{ phoneAddress }}</li>
+                <li> {{ emailAddress }}</li>
             </ul>
     </li>
     
@@ -12,6 +12,11 @@
 
 <script lang="ts">
 export default {
+    props: [
+        'name',
+        'phoneAddress',
+        'emailAddress'
+    ],
     data() {
         return {
             // data properties go here

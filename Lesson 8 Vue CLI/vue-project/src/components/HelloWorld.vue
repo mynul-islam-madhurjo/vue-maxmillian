@@ -1,4 +1,8 @@
 <script setup>
+
+// When we want to use different data for same component in different html files
+// we use props 
+// it is like custom html elements
 defineProps({
   msg: {
     type: String,
