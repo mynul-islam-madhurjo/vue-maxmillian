@@ -1,7 +1,7 @@
 <template>
     <li>
         <h1> {{ name }}</h1>
-        <button @click="showDetails"> {{ dataVisible ? 'Hide' : 'Show' }} More Details</button>
+        <button @click="showDetails"> {{ dataVisible ? 'Hide' : 'Show' }} Details</button>
             <ul v-if="dataVisible">
                 <li>{{ phoneAddress }}</li>
                 <li> {{ emailAddress }}</li>
@@ -12,6 +12,7 @@
 
 <script lang="ts">
 export default {
+    // props is used for parent child communication
     props: [
         'name',
         'phoneAddress',
@@ -27,7 +28,7 @@ export default {
                 phone: '12345678',
                 email: 'mynulislam@gmail.com'
         }            
-        }
+        }    
     },
     methods: {
         showDetails(){
