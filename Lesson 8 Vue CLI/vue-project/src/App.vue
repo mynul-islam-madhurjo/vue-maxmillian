@@ -11,9 +11,11 @@ import FriendContact from './components/FriendContact.vue'
 
   <header>
     <h1>Dynamic List</h1>
-    <ul>
-      <!-- Need to use kebab case for html  -->
-      <FriendContact 
+    <ul>  
+      <!-- Need to use kebab case for html  
+      name props is required
+      -->
+      <FriendContact
       name="Mynul Islam"
       phone-address="1234567890"
       email-address="mynul@gmail.com"

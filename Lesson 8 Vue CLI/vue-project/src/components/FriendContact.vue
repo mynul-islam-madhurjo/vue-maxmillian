@@ -11,13 +11,23 @@
 </template>
 
 <script lang="ts">
-export default {
+export default{
     // props is used for parent child communication
-    props: [
-        'name',
-        'phoneAddress',
-        'emailAddress'
-    ],
+    // props: ['name','phoneAddress','emailAddress'],
+    props: {
+        name: {
+            type: String,
+            // if true then we must give it 
+            required: false,
+            default: 'default',
+            validator: function(value) {
+                return value === 'Mynul Islam';
+            }
+        },
+        phoneAddress: String,
+        emailAddress: String
+    }, 
+    
     data() {
         return {
             // data properties go here
