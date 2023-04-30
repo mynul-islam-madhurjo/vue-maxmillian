@@ -16,15 +16,17 @@ import FriendContact from './components/FriendContact.vue'
       name props is required
       -->
       <FriendContact
-      name="Mynul Islam"
-      phone-address="1234567890"
-      email-address="mynul@gmail.com"
+      v-for="friend in friends"
+      :key="friend.id"
+      :name="friend.name"
+      :phone-address="friend.phone"
+      :email-address="friend.email"
       />
-      <FriendContact
+      <!-- <FriendContact
       name="Mynul Islam 2"
       phone-address="023892839283"
       email-address="mynul2@gmail.com"
-      />
+      /> -->
     </ul>
 
   </header>
