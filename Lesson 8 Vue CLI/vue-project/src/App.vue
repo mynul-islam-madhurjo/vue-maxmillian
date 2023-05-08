@@ -12,18 +12,23 @@ import FriendContact from './components/FriendContact.vue'
   <header>
     <h1>Dynamic List</h1>
     <ul>  
+
       <!-- Need to use kebab case for html  
       name props is required
       -->
       <FriendContact
       v-for="friend in friends"
       :key="friend.id"
+      :id="friend.id"
       :name="friend.name"
       :phone-address="friend.phone"
       :email-address="friend.email"
+      :is-favourite="friend.isFavourite"
+      @toggle-favourite="toggleFavouriteStatus"
+
       />
       <!-- <FriendContact
-      name="Mynul Islam 2"
+      name="Mynul Islam 2"ent
       phone-address="023892839283"
       email-address="mynul2@gmail.com"
       /> -->
@@ -33,7 +38,7 @@ import FriendContact from './components/FriendContact.vue'
     
 
 
-
+ 
 </template>  
 
 <script>
@@ -47,19 +52,26 @@ export default {
           id: 'mynul',
           name: 'mynul islam',
           phone: '12345678',
-          email: 'mynulislam@gmail.com'
+          email: 'mynulislam@gmail.com',
+          isFavourite: true
         }, 
         {
           id: 'mynul2',
           name: 'mynul islam 2',
           phone: '12345678910',
-          email: 'mynulislam2@gmail.com'
-        }
+          email: 'mynulislam2@gmail.com',
+          isFavourite: false
+        } 
       ]
     }
   },
   methods: {
+    //For communicating from child to parent
+    toggleFavouriteStatus(key){
+      alert(key);
+      // console.log(this.friends[0].id);
 
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 <template>
     <li>
-        <h1> {{ name }}</h1>
+        <h1> {{ name }} {{ isFavourite===true ? '(Favourite)' : '' }}</h1>
+        <button @click="toggleFavourite">Toggle Favourite</button>
         <button @click="showDetails"> {{ dataVisible ? 'Hide' : 'Show' }} Details</button>
             <ul v-if="dataVisible">
                 <li>{{ phoneAddress }}</li>
@@ -25,24 +26,34 @@ export default{
             }
         },
         phoneAddress: String,
-        emailAddress: String
+        emailAddress: String,
+        isFavourite: Boolean,
+        id: String, 
+
     }, 
     
     data() {
         return {
             // data properties go here
             dataVisible: false,
-            friend: {
-                id: 'mynul',
-                name: 'mynul islam',
-                phone: '12345678',
-                email: 'mynulislam@gmail.com'
-        }            
-        }    
+            isFavourite: this.isFavourite
+        //     friend: {
+        //         id: 'mynul',
+        //         name: 'mynul islam',
+        //         phone: '12345678',
+        //         email: 'mynulislam@gmail.com'
+        // }            
+        };    
     },
     methods: {
         showDetails(){
             this.dataVisible = !this.dataVisible;
+        },
+        toggleFavourite(){
+            // this.isFavourite=!this.isFavourite;
+            // Creating a custom event for parent
+            console.log(this.id);
+            this.$emit('toggle-favourite', this.id);
         }
     }
 }
