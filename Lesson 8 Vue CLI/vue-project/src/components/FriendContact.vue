@@ -36,7 +36,7 @@ export default{
         return {
             // data properties go here
             dataVisible: false,
-            isFavourite: this.isFavourite
+            // isFavourite: this.isFavourite
         //     friend: {
         //         id: 'mynul',
         //         name: 'mynul islam',

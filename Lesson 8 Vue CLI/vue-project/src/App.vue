@@ -67,17 +67,16 @@ export default {
   },
   methods: {
     //For communicating from child to parent
-    toggleFavouriteStatus(key){
-      alert(key);
-      // console.log(this.friends[0].id);
-
+    toggleFavouriteStatus(friendId){
+      const identifiedFriend = this.friends.find(friend => friend.id === friendId);
+      identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
     }
   }
 }
 
 </script>
 
-
+ 
 <style > 
 * {
   box-sizing: border-box;
