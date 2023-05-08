@@ -31,7 +31,19 @@ export default{
         id: String, 
 
     }, 
-    
+    //Custom events from the child to parent
+    // emits:[ 
+    //     'toggle-favourite'
+    // ],
+    emits:{
+        'toggle-favourite': function(id){
+            if(id){
+                return true;
+            }else{
+                console.warn('Id is missing ')
+            }
+        }
+    },
     data() {
         return {
             // data properties go here
@@ -52,9 +64,10 @@ export default{
         toggleFavourite(){
             // this.isFavourite=!this.isFavourite;
             // Creating a custom event for parent
-            console.log(this.id);
+            // this.$emit('toggle-favourite');
             this.$emit('toggle-favourite', this.id);
-        }
+
+        } 
     }
 }
 </script>
