@@ -4,8 +4,8 @@
         <button @click="toggleFavourite">Toggle Favourite</button>
         <button @click="showDetails"> {{ dataVisible ? 'Hide' : 'Show' }} Details</button>
             <ul v-if="dataVisible">
-                <li>{{ phoneAddress }}</li>
-                <li> {{ emailAddress }}</li>
+                <li>Phone Address: {{ phoneAddress }}</li>
+                <li> Email Address: {{ emailAddress }}</li>
             </ul>
     </li>
     

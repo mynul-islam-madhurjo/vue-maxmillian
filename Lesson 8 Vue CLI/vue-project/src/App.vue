@@ -2,6 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 import FriendContact from './components/FriendContact.vue'
+import NewFriend from './components/NewFriend.vue'
 
 // Any variables or functions defined here will be available in the template
 
@@ -11,6 +12,9 @@ import FriendContact from './components/FriendContact.vue'
 
   <header>
     <h1>Dynamic List</h1>
+    <NewFriend
+      @add-contact="addContact"
+    />
     <ul>  
 
       <!-- Need to use kebab case for html  
@@ -70,6 +74,17 @@ export default {
     toggleFavouriteStatus(friendId){
       const identifiedFriend = this.friends.find(friend => friend.id === friendId);
       identifiedFriend.isFavourite = !identifiedFriend.isFavourite;
+    },
+    addContact(name,email,address){
+
+      const newContact = {
+          id: new Date().toISOString(),
+          name: name,
+          phone: email,
+          email: address,
+          isFavourite: false
+      };
+      this.friends.push(newContact);
     }
   }
 }
@@ -102,7 +117,7 @@ header {
   max-width: 40rem;
 }
 
-#app ul {
+#app ul, #app form{
   margin: 0;
   padding: 0;
   list-style: none;
@@ -141,4 +156,18 @@ header {
   border-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
 }
+#app input {
+  font: inherit;
+  padding: 0.15rem;
+}
+#app label {
+  font-weight: bold;
+  margin-right: 1rem;
+  width: 7rem;
+  display: inline-block;
+}
+#app form div {
+  margin: 1rem 0;
+}
+
 </style>
