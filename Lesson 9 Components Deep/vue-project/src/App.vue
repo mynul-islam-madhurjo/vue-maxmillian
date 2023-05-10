@@ -41,6 +41,9 @@ export default {
 
 </script>
 
+<!-- this is the global styles which will be affected in every component,
+We can use 
+-->
 <style>
 html {
   font-family: sans-serif;
@@ -49,4 +52,4 @@ html {
 body {
   margin: 0;
 }
-</style>
+</style>  
