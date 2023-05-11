@@ -1,9 +1,11 @@
 <template>
   <section>
-    <div>
+    <header>
+      <div>
       <h3>{{ fullName }}</h3>
       <BaseBadge :type="role" :caption="role.toUpperCase()"></BaseBadge>
     </div>
+    </header>
     <p>{{ infoText }}</p>
   </section>
 </template>
@@ -19,7 +21,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 section {
   margin: 2rem auto;
   max-width: 30rem;
