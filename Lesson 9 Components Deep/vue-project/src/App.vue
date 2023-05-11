@@ -7,8 +7,6 @@ import UserInfo from './components/UserInfo.vue'
 import ManageGoals from './components/MyGoals.vue'
 import ActiveGoals from './components/MyActiveGoals.vue'
 
-
-
 // Any variables or functions defined here will be available in the template
 
 </script>
@@ -16,7 +14,6 @@ import ActiveGoals from './components/MyActiveGoals.vue'
 <template>
 
 <div>
-
   <button type="button" @click="setGoals('active-goals')">Active Goals</button>
   <button type="button" @click="setGoals('manage-goals')">Manage Goals</button>
 
@@ -54,7 +51,6 @@ export default {
     UserInfo,
     ManageGoals,
     ActiveGoals
-
   },
   data() {
     return {
