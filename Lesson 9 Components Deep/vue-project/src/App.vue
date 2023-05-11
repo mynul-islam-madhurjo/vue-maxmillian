@@ -25,7 +25,10 @@ import ActiveGoals from './components/MyActiveGoals.vue'
       <ActiveGoals v-if="activeComponent==='active-goals'"/>
     </keep-alive> -->
     
-    <component :is="activeComponent"></component>
+    <keep-alive>
+      <component :is="activeComponent"></component>
+    </keep-alive>
+    
 
 <!-- <TheHeader/>
 <BadgeList/>
