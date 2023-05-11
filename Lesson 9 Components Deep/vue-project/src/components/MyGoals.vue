@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>
-            My Goals
+            Goals
         </h1>
     </div>
 </template>

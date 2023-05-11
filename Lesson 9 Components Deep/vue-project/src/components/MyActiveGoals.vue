@@ -1,8 +1,9 @@
 <template>
     <div>
         <h1>
-            My Active Goals
+            Active Goals
         </h1>
+        <input type="text">
     </div>
 </template>
 

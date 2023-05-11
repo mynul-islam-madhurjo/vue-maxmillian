@@ -4,8 +4,8 @@ import BaseBadge from './components/BaseBadge.vue'
 import TheHeader from './components/TheHeader.vue'
 import UserInfo from './components/UserInfo.vue'
 
-import MyGoals from './components/MyGoals.vue'
-import MyActiveGoals from './components/MyActiveGoals.vue'
+import ManageGoals from './components/MyGoals.vue'
+import ActiveGoals from './components/MyActiveGoals.vue'
 
 
 
@@ -18,10 +18,14 @@ import MyActiveGoals from './components/MyActiveGoals.vue'
 <div>
 
   <button type="button" @click="setGoals('active-goals')">Active Goals</button>
-  <button type="button" @click="setGoals('my-goals')">Manage Goals</button>
+  <button type="button" @click="setGoals('manage-goals')">Manage Goals</button>
 
-    <MyGoals v-if="activeComponent==='my-goals'" />
-    <MyActiveGoals v-if="activeComponent==='active-goals'"/>
+    <!-- <ManageGoals v-if="activeComponent==='my-goals'" />
+    <keep-alive>
+      <ActiveGoals v-if="activeComponent==='active-goals'"/>
+    </keep-alive> -->
+    
+    <component :is="activeComponent"></component>
 
 <!-- <TheHeader/>
 <BadgeList/>
@@ -39,7 +43,16 @@ import MyActiveGoals from './components/MyActiveGoals.vue'
 <script>
 // If you need to define variables or functions outside of the <script setup> section,
 // you can do so in a separate <script> block
-export default { 
+export default {
+  components: {
+    BadgeList,
+    BaseBadge,
+    TheHeader,
+    UserInfo,
+    ManageGoals,
+    ActiveGoals
+
+  },
   data() {
     return {
       activeComponent: "",
