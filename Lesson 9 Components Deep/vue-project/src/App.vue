@@ -4,8 +4,8 @@ import BaseBadge from './components/BaseBadge.vue'
 import TheHeader from './components/TheHeader.vue'
 import UserInfo from './components/UserInfo.vue'
 
-import ManageGoals from './components/MyGoals.vue'
-import ActiveGoals from './components/MyActiveGoals.vue'
+import ManageGoals from './components/ManageGoals.vue'
+import ActiveGoals from './components/ActiveGoals.vue'
 
 // Any variables or functions defined here will be available in the template
 
@@ -17,14 +17,18 @@ import ActiveGoals from './components/MyActiveGoals.vue'
   <button type="button" @click="setGoals('active-goals')">Active Goals</button>
   <button type="button" @click="setGoals('manage-goals')">Manage Goals</button>
 
-    <!-- <ManageGoals v-if="activeComponent==='my-goals'" />
+  <ActiveGoals v-if="activeComponent==='active-goals'"
+  :items="goals"
+  />
     <keep-alive>
-      <ActiveGoals v-if="activeComponent==='active-goals'"/>
-    </keep-alive> -->
-    
-    <keep-alive>
-      <component :is="activeComponent"></component>
+      <ManageGoals v-if="activeComponent==='manage-goals'"
+      @add-goal="addGoals"
+      />
     </keep-alive>
+    
+    <!-- <keep-alive>
+      <component :is="activeComponent"></component>
+    </keep-alive> -->
     
 
 <!-- <TheHeader/>
@@ -38,6 +42,7 @@ import ActiveGoals from './components/MyActiveGoals.vue'
 
 
 </div>
+
 </template>  
 
 <script>
@@ -60,11 +65,15 @@ export default {
         description: 'Site owner and admin',
         role: 'admin',
       },
+      goals: []
     };
   },
   methods: {
     setGoals(cmp){
       this.activeComponent =cmp;
+    },
+    addGoals(goals){
+      this.goals.push(goals);
     }
   }
 }

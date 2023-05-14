@@ -3,7 +3,7 @@
         <h1>
             Goals
         </h1>
-        <input type="text" ref="goal">
+        <input v-model="storedGoal" type="text" />
         <div v-if="goalEmpty">
             <!-- Not nested anymore inside the body tag -->
             <teleport to='body'>
@@ -30,14 +30,16 @@ import ErrorDialogue from './ErrorDialogue.vue'
        },
         data(){
             return {
+                storedGoal: '',
                 goalEmpty: false,
             }
         },
         methods : {
             submitGoal(){
-                const enteredGoal = this.$refs.goal.value;
+                const enteredGoal = this.storedGoal;
                 if (enteredGoal){
                     console.log(enteredGoal);
+                    this.$emit('add-goal', enteredGoal)
                 }else{
                     this.goalEmpty = true;
                 }

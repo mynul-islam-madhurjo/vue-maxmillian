@@ -5,17 +5,18 @@
 </template>
 
 <style scoped>
-  header {
-    width: 100%;
-    height: 5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #14005e;
-  }
+header {
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
 
   header h1 {
     color: white;
-    margin: 0;
   }
 </style>
