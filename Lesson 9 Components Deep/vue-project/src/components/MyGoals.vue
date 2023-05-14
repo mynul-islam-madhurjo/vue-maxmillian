@@ -5,12 +5,15 @@
         </h1>
         <input type="text" ref="goal">
         <div v-if="goalEmpty">
-            <error-dialogue >
-            <h1>
-                Enter Valid Inputs
-            </h1>
-        </error-dialogue>
-        <button type="button" @click="resetGoal">Try Again</button>
+            <!-- Not nested anymore inside the body tag -->
+            <teleport to='body'>
+                <error-dialogue >
+                <h1>
+                    Enter Valid Inputs
+                </h1>
+                <button type="button" @click="resetGoal">Try Again</button>
+                </error-dialogue>
+            </teleport>
         </div>
         <button @click="submitGoal">Submit</button>
 
