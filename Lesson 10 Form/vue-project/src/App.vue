@@ -1,16 +1,14 @@
 <script setup>
-
-
 // Any variables or functions defined here will be available in the template
+
+import TheForm from './components/TheForm.vue';
 
 </script>
 
 <template>
+  
+<TheForm/>
 
-    <h1>Working</h1>
-
-
- 
 </template>  
 
 <script>
