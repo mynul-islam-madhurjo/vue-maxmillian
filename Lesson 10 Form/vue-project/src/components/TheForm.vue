@@ -48,17 +48,28 @@
         <label for="how-other">Other</label>
       </div>
     </div>
+    <RatingControlVue/>
     <div>
       <button>Save Data</button>
     </div>
+    
+
   </form>
 
     </div>
 </template>
 
 <script lang="ts">
+
+import RatingControlVue from './RatingControl.vue';
+
+
+
     export default {
-        data() {
+      components: {
+        RatingControlVue
+      },
+      data() {
             return{
                 userName: "",
                 userAge: null,
