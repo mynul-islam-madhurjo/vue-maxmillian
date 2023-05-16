@@ -1,9 +1,10 @@
 <template>
     <div>
         <form @submit.prevent="submitForm">
-    <div class="form-control">
+    <div class="form-control" :class="{invalid: dataInput === true}">
       <label for="user-name">Your Name</label>
-      <input id="user-name" name="user-name" type="text" v-model="userName" />
+      <input id="user-name" name="user-name" type="text" v-model.trim="userName"  @blur="validateInput"/>
+      <p v-if="dataInput === true">Please enter a valid name!</p>
     </div>
     <div class="form-control">
       <label for="age">Your Age (Years)</label>
@@ -65,18 +66,32 @@
                 interests: [],
                 learning: null,
                 source: null,
+                dataInput: false
             }
         },
         methods: {
             submitForm() {
+              // if (this.userName == ""){
+              //     alert("Please enter name");
+              // }else{
                 console.log("User Name: " + this.userName);
                 console.log("User Age: " + this.userAge);
                 console.log("User Interests: " + this.interests);
                 console.log("User Learning: " + this.learning);
                 console.log("Source: " + this.source);
+              // }
+                
+            },
+            validateInput() {
+              if (this.userName == ""){
+                  this.dataInput = true;
+              }else{
+                this.dataInput = false;
             }
         }
     }
+
+  }
 </script>
 
 <style scoped>
@@ -91,6 +106,14 @@ form {
 
 .form-control {
   margin: 0.5rem 0;
+}
+
+.form-control.invalid input {
+  border-color: red;
+}
+
+.form-control.invalid label {
+  color: red;
 }
 
 label {
@@ -109,7 +132,6 @@ select {
   font: inherit;
   margin-top: 0.5rem;
 }
-
 
 select {
   width: auto;
