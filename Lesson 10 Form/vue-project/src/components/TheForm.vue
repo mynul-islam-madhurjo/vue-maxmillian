@@ -71,15 +71,15 @@
         },
         methods: {
             submitForm() {
-              // if (this.userName == ""){
-              //     alert("Please enter name");
-              // }else{
+              if (this.userName == ""){
+                  alert("Please enter name");
+              }else{
                 console.log("User Name: " + this.userName);
                 console.log("User Age: " + this.userAge);
                 console.log("User Interests: " + this.interests);
                 console.log("User Learning: " + this.learning);
                 console.log("Source: " + this.source);
-              // }
+              }
                 
             },
             validateInput() {
