@@ -1,35 +1,35 @@
 <template>
-        <ul>
-            <li :class="{active: activeOption === 'poor'}"
-            ><button type="button" @click="activate('poor')">Poor</button></li>
-            <li :class="{active: activeOption === 'average'}"
-            ><button type="button" @click="activate('average')">Average</button></li>
-            <li :class="{active: activeOption === 'great'}"
-            ><button type="button" @click="activate('great')">Great</button></li>
-        </ul>
-
+  <ul>
+    <li :class="{ active: modelValue === 'poor' }">
+      <button type="button" @click="activate('poor')">Poor</button>
+    </li>
+    <li :class="{ active: modelValue === 'average' }">
+      <button type="button" @click="activate('average')">Average</button>
+    </li>
+    <li :class="{ active: modelValue === 'great' }">
+      <button type="button" @click="activate('great')">Great</button>
+    </li>
+  </ul>
 </template>
 
 <script lang="ts">
-    export default {
-        data() {
-            return {
-                activeOption: null
-            }
-        },
-        methods: {
-            activate(optionName){
-                this.activeOption = optionName;
-            }
-        }
-
-    }
+export default {
+  props: ['modelValue'],
+  emits: ['update:modelValue'],
+  //Computed can be used but not necessarily
+  //Computed is used so that if I refresh the method doesnt get triggered
+  // computed: {
+  //   activeOptionValue() {
+  //     return this.modelValue;
+  //   },
+  // },
+  methods: {
+    activate(optionName) {
+      this.$emit('update:modelValue', optionName);
+    },
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
-
 
 <style scoped>
 .active {

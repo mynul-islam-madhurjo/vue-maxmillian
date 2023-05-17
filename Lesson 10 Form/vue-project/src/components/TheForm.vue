@@ -48,7 +48,8 @@
         <label for="how-other">Other</label>
       </div>
     </div>
-    <RatingControlVue/>
+    <!-- v-model is used instead of binind props and emits -->
+    <rating-control v-model="rating"></rating-control>
     <div>
       <button>Save Data</button>
     </div>
@@ -61,13 +62,13 @@
 
 <script lang="ts">
 
-import RatingControlVue from './RatingControl.vue';
+import RatingControl from './RatingControl.vue';
 
 
 
     export default {
       components: {
-        RatingControlVue
+        RatingControl
       },
       data() {
             return{
@@ -77,7 +78,8 @@ import RatingControlVue from './RatingControl.vue';
                 interests: [],
                 learning: null,
                 source: null,
-                dataInput: false
+                dataInput: false,
+                rating: null,
             }
         },
         methods: {
@@ -90,7 +92,9 @@ import RatingControlVue from './RatingControl.vue';
                 console.log("User Interests: " + this.interests);
                 console.log("User Learning: " + this.learning);
                 console.log("Source: " + this.source);
+                console.log("Rating: " + this.rating);
               }
+
                 
             },
             validateInput() {
