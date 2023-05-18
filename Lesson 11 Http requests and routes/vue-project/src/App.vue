@@ -6,11 +6,26 @@ import TheForm from './components/TheForm.vue';
 </script>
 
 <template>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <router-link to="/form">Form</router-link>
+                </li>
+                <li>
+                    <router-link to="/rating">Rating</router-link>
+                </li>
+            </ul>
+
+        </nav>
+        
+        <router-view></router-view>
+
+    </header>
   
 <!-- <TheForm/> -->
-<main>
-    <router-view></router-view>
-</main>
+
+        
 
 </template>  
 
